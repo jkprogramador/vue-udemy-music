@@ -1,0 +1,10 @@
+services:
+  web:
+    build: .
+    image: vue-udemy-music:latest
+    volumes:
+      - ./src/public:/usr/src/app/public
+      - ./src/src:/usr/src/app/src
+      - ./src/tests:/usr/src/app/tests
+    ports:
+      - 8000:8080
