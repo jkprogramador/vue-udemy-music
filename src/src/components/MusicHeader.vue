@@ -34,7 +34,7 @@ export default {
     name: "MusicHeader",
     methods: {
         toggleAuthModal() {
-            this.$store.state.authModalShow = !this.$store.state.authModalShow;
+            this.$store.commit("toggleAuthModal");
             console.log(this.$store.state.authModalShow);
         },
     },
