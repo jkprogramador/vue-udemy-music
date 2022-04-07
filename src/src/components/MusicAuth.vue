@@ -46,7 +46,10 @@
                     <div class="flex justify-between items-center pb-4">
                         <p class="text-2xl font-bold">Your Account</p>
                         <!-- Modal Close Button -->
-                        <div class="modal-close cursor-pointer z-50">
+                        <div
+                            class="modal-close cursor-pointer z-50"
+                            @click.prevent="toggleAuthModal"
+                        >
                             <i class="fas fa-times"></i>
                         </div>
                     </div>
@@ -329,12 +332,17 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
+
 export default {
     name: "MusicAuth",
     computed: {
         authModalShow() {
             return this.$store.getters.authModalShow;
         },
+    },
+    methods: {
+        ...mapMutations(["toggleAuthModal"]),
     },
 };
 </script>
