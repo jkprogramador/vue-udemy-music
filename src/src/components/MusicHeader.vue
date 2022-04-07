@@ -30,13 +30,16 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
+
 export default {
     name: "MusicHeader",
     methods: {
-        toggleAuthModal() {
-            this.$store.commit("toggleAuthModal");
-            console.log(this.$store.state.authModalShow);
-        },
+        ...mapMutations(["toggleAuthModal"]),
+        // toggleAuthModal() {
+        //     this.$store.commit("toggleAuthModal");
+        //     console.log(this.$store.state.authModalShow);
+        // },
     },
 };
 </script>
