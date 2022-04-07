@@ -152,13 +152,14 @@
                         </button>
                     </form>
                     <!-- Registration Form -->
-                    <form v-show="tab === 'register'">
+                    <vee-form v-show="tab === 'register'">
                         <!-- Name -->
                         <div class="mb-3">
                             <label for="register-name" class="inline-block mb-2"
                                 >Name</label
                             >
-                            <input
+                            <vee-field
+                                name="name"
                                 id="register-name"
                                 type="text"
                                 class="
@@ -327,7 +328,7 @@
                         >
                             Submit
                         </button>
-                    </form>
+                    </vee-form>
                 </div>
             </div>
         </div>
