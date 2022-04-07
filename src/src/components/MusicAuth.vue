@@ -1,5 +1,9 @@
 <template>
-    <div class="fixed z-10 inset-0 overflow-y-auto hidden" id="modal">
+    <div
+        class="fixed z-10 inset-0 overflow-y-auto"
+        id="modal"
+        :class="{ hidden: !authModalShow }"
+    >
         <div
             class="
                 flex
@@ -327,6 +331,11 @@
 <script>
 export default {
     name: "MusicAuth",
+    computed: {
+        authModalShow() {
+            return this.$store.getters.authModalShow;
+        },
+    },
 };
 </script>
 
