@@ -2,7 +2,7 @@
     <div
         class="fixed z-10 inset-0 overflow-y-auto"
         id="modal"
-        :class="{ hidden: !authModalShow }"
+        :class="{ hidden: !modal }"
     >
         <div
             class="
@@ -341,7 +341,10 @@ export default {
         //     return this.$store.getters.authModalShow;
         // },
         // ...mapGetters(["authModalShow"]),
-        ...mapState(["authModalShow"]),
+        // ...mapState(["authModalShow"]),
+        ...mapState({
+            modal: "authModalShow",
+        }),
     },
     methods: {
         ...mapMutations(["toggleAuthModal"]),
