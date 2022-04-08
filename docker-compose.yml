@@ -8,9 +8,5 @@ services:
       - ./src/tests:/usr/src/app/tests
       - ./src/package.json:/usr/src/app/package.json
       - ./src/package-lock.json:/usr/src/app/package-lock.json
-      - node_modules:/usr/src/app/node_modules
     ports:
       - 8000:8080
-volumes:
-  node_modules:
-    external: true
