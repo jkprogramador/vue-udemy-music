@@ -239,7 +239,8 @@
                                 class="inline-block mb-2"
                                 >Password</label
                             >
-                            <input
+                            <vee-field
+                                name="password"
                                 id="register-password"
                                 type="password"
                                 class="
@@ -256,6 +257,10 @@
                                 "
                                 placeholder="Password"
                             />
+                            <ErrorMessage
+                                class="text-red-600"
+                                name="password"
+                            />
                         </div>
                         <!-- Confirm Password -->
                         <div class="mb-3">
@@ -264,7 +269,8 @@
                                 class="inline-block mb-2"
                                 >Confirm Password</label
                             >
-                            <input
+                            <vee-field
+                                name="confirm_password"
                                 id="register-confirm-password"
                                 type="password"
                                 class="
@@ -280,6 +286,10 @@
                                     rounded
                                 "
                                 placeholder="Confirm Password"
+                            />
+                            <ErrorMessage
+                                class="text-red-600"
+                                name="confirm_password"
                             />
                         </div>
                         <!-- Country -->
@@ -368,8 +378,8 @@ export default {
                 name: "required|min:3|max:100|alpha_spaces",
                 email: "required|min:3|max:100|email",
                 age: "required|min_value:18|max_value:100",
-                password: "",
-                confirm_password: "",
+                password: "required|min:3|max:100",
+                confirm_password: "confirmed:@password",
                 country: "",
                 tos: "",
             },
