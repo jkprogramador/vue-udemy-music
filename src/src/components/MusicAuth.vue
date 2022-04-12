@@ -299,7 +299,9 @@
                                 class="inline-block mb-2"
                                 >Country</label
                             >
-                            <select
+                            <vee-field
+                                as="select"
+                                name="country"
                                 id="register-country"
                                 class="
                                     block
@@ -317,11 +319,15 @@
                                 <option value="USA">USA</option>
                                 <option value="Mexico">Mexico</option>
                                 <option value="Germany">Germany</option>
-                            </select>
+                                <option value="Antarctica">Antarctica</option>
+                            </vee-field>
+                            <ErrorMessage class="text-red-600" name="country" />
                         </div>
                         <!-- TOS -->
                         <div class="mb-3 pl-6">
-                            <input
+                            <vee-field
+                                name="tos"
+                                value="1"
                                 id="register-terms"
                                 type="checkbox"
                                 class="w-4 h-4 float-left -ml-6 mt-1 rounded"
@@ -329,6 +335,10 @@
                             <label for="register-terms" class="inline-block"
                                 >Accept terms of service</label
                             >
+                            <ErrorMessage
+                                class="text-red-600 block"
+                                name="tos"
+                            />
                         </div>
                         <button
                             type="submit"
@@ -380,8 +390,8 @@ export default {
                 age: "required|min_value:18|max_value:100",
                 password: "required|min:3|max:100",
                 confirm_password: "confirmed:@password",
-                country: "",
-                tos: "",
+                country: "required|excluded:Antarctica",
+                tos: "required",
             },
         };
     },
